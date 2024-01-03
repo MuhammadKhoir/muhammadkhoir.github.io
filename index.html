@@ -16,6 +16,11 @@
   </head>
   <body id="home">
 
+    <!-- Kursor -->
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+    <!-- Akhir Kursor -->
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #427d89b8">
       <div class="container">
@@ -208,6 +213,31 @@
         >
       </p>
     </footer>
+
+    <!-- Js Kursorr -->
+    <script>
+    const cursorDot = document.querySelector("[data-cursor-dot]");
+    const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+window.addEventListener("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // cursorOutline.style.left = `${posX}px`;
+    // cursorOutline.style.top = `${posY}px`;
+
+    cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px` },
+        { duration: 500, fill: "forwards"
+    });
+
+} )
+</script>
+<!-- End JS kursor -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
